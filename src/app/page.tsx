@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle, Globe, CreditCard, Coins, ArrowRight, Bookmark, AlertTriangle, Star, Shield, Lock, Award, CheckCircle, Eye, Clock } from 'lucide-react';
+import { MessageCircle, Globe, CreditCard, Coins, ArrowRight, Bookmark, AlertTriangle, Star, Shield, Lock, Award, CheckCircle, Eye } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Home() {
