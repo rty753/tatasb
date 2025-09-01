@@ -20,12 +20,12 @@ export const metadata: Metadata = {
   publisher: "塔塔支付科技",
   robots: "index, follow",
   alternates: {
-    canonical: "https://tata.sb/",
+    canonical: "https://www.tata.sb/",
   },
   openGraph: {
     title: "塔塔支付系统 - tata.sb | 第三方支付通道系统",
     description: "塔塔支付系统官方联系方式更新页面。提供第三方支付通道系统、海外跑分系统解决方案。严禁国内业务，专注海外市场。",
-    url: "https://tata.sb",
+    url: "https://www.tata.sb/",
     siteName: "塔塔支付系统",
     locale: "zh_CN",
     type: "website",

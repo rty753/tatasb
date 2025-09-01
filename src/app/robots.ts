@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://tata.sb/sitemap.xml',
+    sitemap: 'https://www.tata.sb/sitemap.xml',
   }
 }
