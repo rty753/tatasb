@@ -79,7 +79,7 @@ export default function Home() {
                 </motion.a>
 
                 <motion.a
-                  href="https://t.me/tatapay41"
+                  href="https://t.me/thirdpartypaybuild"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative overflow-hidden bg-gradient-to-br from-purple-600/20 to-pink-600/20 hover:from-purple-600/30 hover:to-pink-600/30 backdrop-blur-lg rounded-3xl p-6 lg:p-8 border border-purple-400/30 hover:border-purple-400/60 transition-all duration-500"
@@ -93,18 +93,29 @@ export default function Home() {
                       <ArrowRight className="w-6 lg:w-8 h-6 lg:h-8 text-purple-400 group-hover:translate-x-2 transition-transform duration-300" />
                     </div>
                     <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">Telegram 频道</h3>
-                    <p className="text-purple-200 text-lg mb-3 lg:mb-4">@tatapay41</p>
+                    <p className="text-purple-200 text-lg mb-3 lg:mb-4">@thirdpartypaybuild</p>
                     <p className="text-slate-300 text-sm lg:text-base">最新资讯和系统更新通知</p>
                   </div>
                 </motion.a>
               </div>
 
-              <motion.div 
-                className="text-center pb-4 lg:pb-8"
+              <motion.div
+                className="text-center pb-4 lg:pb-8 space-y-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
+                <a
+                  href="https://tata.sb/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-8 lg:px-12 py-4 lg:py-6 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 hover:from-orange-700 hover:via-red-700 hover:to-pink-700 text-white font-bold text-lg lg:text-xl rounded-3xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl"
+                >
+                  <Globe className="w-6 lg:w-7 h-6 lg:h-7 mr-3 lg:mr-4" />
+                  全球支付论坛
+                  <ArrowRight className="w-6 lg:w-7 h-6 lg:h-7 ml-3 lg:ml-4" />
+                </a>
+
                 <a
                   href="https://tatapaytech.com"
                   target="_blank"
