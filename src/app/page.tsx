@@ -100,22 +100,11 @@ export default function Home() {
               </div>
 
               <motion.div
-                className="text-center pb-4 lg:pb-8 space-y-4"
+                className="text-center pb-4 lg:pb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-                <a
-                  href="https://tata.sb/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 lg:px-12 py-4 lg:py-6 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 hover:from-orange-700 hover:via-red-700 hover:to-pink-700 text-white font-bold text-lg lg:text-xl rounded-3xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl"
-                >
-                  <Globe className="w-6 lg:w-7 h-6 lg:h-7 mr-3 lg:mr-4" />
-                  全球支付论坛
-                  <ArrowRight className="w-6 lg:w-7 h-6 lg:h-7 ml-3 lg:ml-4" />
-                </a>
-
                 <a
                   href="https://tatapaytech.com"
                   target="_blank"
@@ -271,7 +260,7 @@ export default function Home() {
 
 
           {/* Footer */}
-          <motion.footer 
+          <motion.footer
             className="text-center text-slate-400 pb-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -279,6 +268,17 @@ export default function Home() {
           >
             <div className="max-w-4xl mx-auto">
               <div className="bg-gradient-to-r from-slate-800/40 to-slate-900/40 backdrop-blur-lg rounded-2xl p-8 border border-slate-600/20">
+                <div className="mb-4">
+                  <a
+                    href="https://tata.sb/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-300"
+                  >
+                    <Globe className="w-4 h-4" />
+                    <span>全球支付论坛</span>
+                  </a>
+                </div>
                 <p className="text-sm text-slate-500">
                   © 2025 塔塔支付系统 - 塔塔支付科技 - 专业塔塔支付系统解决方案提供商
                 </p>
