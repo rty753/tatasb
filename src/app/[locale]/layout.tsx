@@ -13,7 +13,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const dict = getDictionary(locale);
-  const baseUrl = 'https://www.tata.sb';
+  const baseUrl = 'https://tata.sb';
 
   return {
     title: dict.metaTitle,
@@ -64,7 +64,7 @@ export default async function LocaleLayout({
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: dict.jsonLdName,
-    url: 'https://www.tata.sb',
+    url: 'https://tata.sb',
     description: dict.jsonLdDesc,
     ...(locale === 'en'
       ? {
@@ -90,7 +90,7 @@ export default async function LocaleLayout({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: dict.metaSiteName,
-    url: `https://www.tata.sb/${locale}/`,
+    url: `https://tata.sb/${locale}/`,
     inLanguage: locale === 'en' ? 'en' : 'zh-CN',
   };
 
