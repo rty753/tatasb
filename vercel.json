@@ -1,11 +1,4 @@
 {
-  "trailingSlash": true,
-  "rewrites": [
-    {
-      "source": "/:path*",
-      "destination": "/:path*/"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",

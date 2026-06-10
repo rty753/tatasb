@@ -1,12 +1,19 @@
-import { MetadataRoute } from 'next'
- 
+import { MetadataRoute } from 'next';
+
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://www.tata.sb';
   return [
     {
-      url: 'https://www.tata.sb/',
+      url: `${baseUrl}/zh/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
-  ]
+    {
+      url: `${baseUrl}/en/`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+  ];
 }
