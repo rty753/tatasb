@@ -26,8 +26,8 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const h = await headers();
-  const xLocale = h.get('x-locale');
-  const lang = xLocale === 'en' ? 'en' : 'zh-CN';
+  const locale = h.get('x-locale') || 'zh';
+  const lang = locale === 'en' ? 'en' : 'zh-CN';
 
   return (
     <html lang={lang} suppressHydrationWarning>

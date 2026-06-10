@@ -1,6 +1,5 @@
 "use client";
 
-import { useParams } from 'next/navigation';
 import { getDictionary } from '@/i18n/dictionaries';
 import {
   MessageCircle,
@@ -20,16 +19,17 @@ import {
   MapPin,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import Grid3DBackground from '../components/Grid3DBackground';
+import Grid3DBackground from './Grid3DBackground';
+import LanguageSwitcher from './LanguageSwitcher';
 
-export default function Home() {
-  const { locale } = useParams() as { locale: string };
+export default function PageContent({ locale }: { locale: string }) {
   const d = getDictionary(locale);
   const isWarning = d.noticeStyle === 'warning';
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-800 relative overflow-hidden">
       <Grid3DBackground />
+      <LanguageSwitcher locale={locale} />
 
       <div className="relative z-10">
         <div className="container mx-auto px-4 py-8 lg:py-12">
@@ -85,7 +85,6 @@ export default function Home() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-8 lg:mb-12">
-                {/* Telegram Support */}
                 <motion.a
                   href="https://t.me/zfxt5"
                   target="_blank"
@@ -100,19 +99,12 @@ export default function Home() {
                       <MessageCircle className="w-10 lg:w-12 h-10 lg:h-12 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
                       <ArrowRight className="w-6 lg:w-8 h-6 lg:h-8 text-blue-400 group-hover:translate-x-2 transition-transform duration-300" />
                     </div>
-                    <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
-                      {d.tgSupportTitle}
-                    </h3>
-                    <p className="text-blue-200 text-lg mb-3 lg:mb-4">
-                      {d.tgSupportHandle}
-                    </p>
-                    <p className="text-slate-300 text-sm lg:text-base">
-                      {d.tgSupportDesc}
-                    </p>
+                    <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">{d.tgSupportTitle}</h3>
+                    <p className="text-blue-200 text-lg mb-3 lg:mb-4">{d.tgSupportHandle}</p>
+                    <p className="text-slate-300 text-sm lg:text-base">{d.tgSupportDesc}</p>
                   </div>
                 </motion.a>
 
-                {/* Telegram Channel */}
                 <motion.a
                   href="https://t.me/thirdpartypaybuild"
                   target="_blank"
@@ -127,20 +119,13 @@ export default function Home() {
                       <MessageCircle className="w-10 lg:w-12 h-10 lg:h-12 text-purple-400 group-hover:scale-110 transition-transform duration-300" />
                       <ArrowRight className="w-6 lg:w-8 h-6 lg:h-8 text-purple-400 group-hover:translate-x-2 transition-transform duration-300" />
                     </div>
-                    <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
-                      {d.tgChannelTitle}
-                    </h3>
-                    <p className="text-purple-200 text-lg mb-3 lg:mb-4">
-                      {d.tgChannelHandle}
-                    </p>
-                    <p className="text-slate-300 text-sm lg:text-base">
-                      {d.tgChannelDesc}
-                    </p>
+                    <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">{d.tgChannelTitle}</h3>
+                    <p className="text-purple-200 text-lg mb-3 lg:mb-4">{d.tgChannelHandle}</p>
+                    <p className="text-slate-300 text-sm lg:text-base">{d.tgChannelDesc}</p>
                   </div>
                 </motion.a>
               </div>
 
-              {/* Website Button */}
               <motion.div
                 className="text-center pb-4 lg:pb-8"
                 initial={{ opacity: 0, y: 20 }}
@@ -161,7 +146,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Notice / Service Overview Section */}
+          {/* Notice / Service Overview */}
           <section className="min-h-screen flex flex-col justify-start pt-8 lg:pt-16">
             <div className="text-center mb-8 lg:mb-12">
               <motion.div
@@ -174,11 +159,7 @@ export default function Home() {
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
               >
-                {isWarning ? (
-                  <AlertTriangle className="w-5 h-5" />
-                ) : (
-                  <Info className="w-5 h-5" />
-                )}
+                {isWarning ? <AlertTriangle className="w-5 h-5" /> : <Info className="w-5 h-5" />}
                 <span>{d.noticeBadge}</span>
               </motion.div>
               <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8">
@@ -205,30 +186,14 @@ export default function Home() {
                   ) : (
                     <Info className="w-10 h-10 text-blue-400" />
                   )}
-                  <h3 className="text-2xl lg:text-3xl font-bold text-white">
-                    {d.noticeHeading}
-                  </h3>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-white">{d.noticeHeading}</h3>
                 </div>
-                <p
-                  className={`text-lg lg:text-xl leading-relaxed mb-4 ${
-                    isWarning ? 'text-red-200' : 'text-blue-200'
-                  }`}
-                >
+                <p className={`text-lg lg:text-xl leading-relaxed mb-4 ${isWarning ? 'text-red-200' : 'text-blue-200'}`}>
                   {d.noticeP1}
-                  <span
-                    className={`font-bold ${
-                      isWarning ? 'text-red-300' : 'text-cyan-300'
-                    }`}
-                  >
-                    {d.noticeHighlight}
-                  </span>
+                  <span className={`font-bold ${isWarning ? 'text-red-300' : 'text-cyan-300'}`}>{d.noticeHighlight}</span>
                   {d.noticeP1End}
                 </p>
-                <p
-                  className={`text-lg lg:text-xl leading-relaxed ${
-                    isWarning ? 'text-red-200' : 'text-blue-200'
-                  }`}
-                >
+                <p className={`text-lg lg:text-xl leading-relaxed ${isWarning ? 'text-red-200' : 'text-blue-200'}`}>
                   {d.noticeP2}
                 </p>
               </div>
@@ -243,26 +208,17 @@ export default function Home() {
             >
               <div className="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 backdrop-blur-lg rounded-3xl p-8 border border-blue-400/30 hover:border-blue-400/60 transition-all duration-300 group">
                 <CreditCard className="w-16 h-16 text-blue-400 mb-6 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  {d.product1Title}
-                </h3>
-                <p className="text-slate-300 text-lg leading-relaxed">
-                  {d.product1Desc}
-                </p>
+                <h3 className="text-2xl font-bold text-white mb-4">{d.product1Title}</h3>
+                <p className="text-slate-300 text-lg leading-relaxed">{d.product1Desc}</p>
               </div>
-
               <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30 hover:border-purple-400/60 transition-all duration-300 group">
                 <Coins className="w-16 h-16 text-purple-400 mb-6 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  {d.product2Title}
-                </h3>
-                <p className="text-slate-300 text-lg leading-relaxed">
-                  {d.product2Desc}
-                </p>
+                <h3 className="text-2xl font-bold text-white mb-4">{d.product2Title}</h3>
+                <p className="text-slate-300 text-lg leading-relaxed">{d.product2Desc}</p>
               </div>
             </motion.div>
 
-            {/* Markets Section (English only) */}
+            {/* Markets (English only) */}
             {d.showMarkets && (
               <motion.div
                 className="max-w-6xl mx-auto mb-16"
@@ -275,14 +231,9 @@ export default function Home() {
                     <MapPin className="w-5 h-5" />
                     <span>{d.marketsBadge}</span>
                   </div>
-                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                    {d.marketsTitle}
-                  </h2>
-                  <p className="text-lg text-slate-300">
-                    {d.marketsSubtitle}
-                  </p>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">{d.marketsTitle}</h2>
+                  <p className="text-lg text-slate-300">{d.marketsSubtitle}</p>
                 </div>
-
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {[
                     { country: d.market1Country, flag: d.market1Flag, methods: d.market1Methods },
@@ -298,9 +249,7 @@ export default function Home() {
                       whileHover={{ scale: 1.02, y: -3 }}
                     >
                       <div className="text-4xl mb-3">{m.flag}</div>
-                      <h4 className="text-lg font-bold text-white mb-2">
-                        {m.country}
-                      </h4>
+                      <h4 className="text-lg font-bold text-white mb-2">{m.country}</h4>
                       <p className="text-slate-300 text-sm">{m.methods}</p>
                     </motion.div>
                   ))}
@@ -320,12 +269,9 @@ export default function Home() {
                   <Award className="w-5 h-5" />
                   <span>{d.certBadge}</span>
                 </div>
-                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                  {d.certTitle}
-                </h2>
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">{d.certTitle}</h2>
                 <p className="text-lg text-slate-300">{d.certSubtitle}</p>
               </div>
-
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
                   { Icon: Shield, title: d.cert1Title, desc: d.cert1Desc, color: 'yellow' },
@@ -344,12 +290,8 @@ export default function Home() {
                     red: 'from-red-900/40 to-orange-900/40 border-red-400/30 hover:border-red-400/60',
                   };
                   const iconColor: Record<string, string> = {
-                    yellow: 'text-yellow-400',
-                    blue: 'text-blue-400',
-                    green: 'text-green-400',
-                    purple: 'text-purple-400',
-                    indigo: 'text-indigo-400',
-                    red: 'text-red-400',
+                    yellow: 'text-yellow-400', blue: 'text-blue-400', green: 'text-green-400',
+                    purple: 'text-purple-400', indigo: 'text-indigo-400', red: 'text-red-400',
                   };
                   return (
                     <motion.div
@@ -357,12 +299,8 @@ export default function Home() {
                       className={`bg-gradient-to-br ${colorMap[cert.color]} backdrop-blur-lg rounded-2xl p-6 border transition-all duration-300 group text-center`}
                       whileHover={{ scale: 1.02, y: -3 }}
                     >
-                      <cert.Icon
-                        className={`w-12 h-12 ${iconColor[cert.color]} mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
-                      />
-                      <h4 className="text-lg font-bold text-white mb-2">
-                        {cert.title}
-                      </h4>
+                      <cert.Icon className={`w-12 h-12 ${iconColor[cert.color]} mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`} />
+                      <h4 className="text-lg font-bold text-white mb-2">{cert.title}</h4>
                       <p className="text-slate-300 text-sm">{cert.desc}</p>
                     </motion.div>
                   );

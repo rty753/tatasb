@@ -1,59 +1,62 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const locales = ['zh', 'en'];
-
-function getPreferredLocale(request: NextRequest): string {
-  // 1. Check cookie (user's manual preference)
-  const cookieLocale = request.cookies.get('locale')?.value;
-  if (cookieLocale && locales.includes(cookieLocale)) {
-    return cookieLocale;
-  }
-
-  // 2. Check Accept-Language header (browser language)
-  const acceptLang = request.headers.get('Accept-Language');
-  if (acceptLang) {
-    const langs = acceptLang
-      .split(',')
-      .map((part) => {
-        const [code, q] = part.trim().split(';q=');
-        return { code: code.trim().toLowerCase(), q: q ? parseFloat(q) : 1 };
-      })
-      .sort((a, b) => b.q - a.q);
-
-    for (const { code } of langs) {
-      if (code.startsWith('zh')) return 'zh';
-      if (code.startsWith('en')) return 'en';
-    }
-  }
-
-  return 'zh';
+function isBot(ua: string): boolean {
+  return /bot|crawl|spider|slurp|googlebot|bingbot|yandex|baidu|duckduck|facebookexternalhit|twitterbot/i.test(ua);
 }
 
-function getLocaleFromPath(pathname: string): string | null {
-  for (const locale of locales) {
-    if (pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)) {
-      return locale;
-    }
+function prefersEnglish(request: NextRequest): boolean {
+  // Cookie takes priority (manual user preference)
+  const cookie = request.cookies.get('locale')?.value;
+  if (cookie === 'zh') return false;
+  if (cookie === 'en') return true;
+
+  // Fall back to Accept-Language header
+  const acceptLang = request.headers.get('Accept-Language');
+  if (!acceptLang) return false;
+
+  const langs = acceptLang
+    .split(',')
+    .map((part) => {
+      const [code, q] = part.trim().split(';q=');
+      return { code: code.trim().toLowerCase(), q: q ? parseFloat(q) : 1 };
+    })
+    .sort((a, b) => b.q - a.q);
+
+  for (const { code } of langs) {
+    if (code.startsWith('zh')) return false;
+    if (code.startsWith('en')) return true;
   }
-  return null;
+  return false;
 }
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const localeInPath = getLocaleFromPath(pathname);
+  const ua = request.headers.get('user-agent') || '';
 
-  if (localeInPath) {
-    // Path already has locale — pass through with x-locale header
+  // /zh or /zh/... → redirect to root (strip /zh prefix)
+  if (pathname === '/zh' || pathname.startsWith('/zh/')) {
+    const newPath = pathname.replace(/^\/zh\/?/, '/') || '/';
+    return NextResponse.redirect(new URL(newPath, request.url));
+  }
+
+  // /en or /en/... → English page, pass through
+  if (pathname === '/en' || pathname.startsWith('/en/')) {
     const headers = new Headers(request.headers);
-    headers.set('x-locale', localeInPath);
+    headers.set('x-locale', 'en');
     return NextResponse.next({ request: { headers } });
   }
 
-  // No locale in path — redirect based on browser language
-  const locale = getPreferredLocale(request);
-  const url = request.nextUrl.clone();
-  url.pathname = `/${locale}${pathname}`;
-  return NextResponse.redirect(url);
+  // Root and other paths → Chinese by default
+  // But redirect English-preferring users (not bots) to /en/
+  if (!isBot(ua) && prefersEnglish(request)) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/en${pathname}`;
+    return NextResponse.redirect(url);
+  }
+
+  const headers = new Headers(request.headers);
+  headers.set('x-locale', 'zh');
+  return NextResponse.next({ request: { headers } });
 }
 
 export const config = {
