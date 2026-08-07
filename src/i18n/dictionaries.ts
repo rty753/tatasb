@@ -107,9 +107,9 @@ const en: typeof zh = {
 
   // Products
   product1Title: 'Overseas Payment System — Build & Rental',
-  product1Desc: 'Rent a ready-made payment system or have one built for you, covering India, Bangladesh, Pakistan and Myanmar. Pre-integrated UPI intent (wake-up) collection, bKash, JazzCash and local bank channels, with real-time dashboards, multi-currency settlement, and automated reconciliation.',
+  product1Desc: 'Rent a ready-made payment system or have one built for you — India, Bangladesh, Pakistan, Myanmar. Pre-integrated UPI intent (wake-up), bKash, JazzCash, with multi-currency settlement and real-time dashboards.',
   product2Title: 'Fourth-Party Payment System Rental',
-  product2Desc: 'Rent a fourth-party (aggregation) payment system: unify multiple upstream channels in one platform with smart routing, payment API technical support, and fast native gateway integration. Serving India, Bangladesh, Pakistan and Myanmar.',
+  product2Desc: 'Rent a fourth-party (aggregation) payment system: multiple upstream channels in one platform, smart routing, payment API support, and fast native gateway integration.',
 
   // Markets (English shows this section)
   showMarkets: true,

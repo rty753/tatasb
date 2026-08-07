@@ -32,28 +32,28 @@ export default function PageContent({ locale }: { locale: string }) {
       <LanguageSwitcher locale={locale} />
 
       <div className="relative z-10">
-        <div className="container mx-auto px-4 py-8 lg:py-12">
+        <div className="container mx-auto px-3 lg:px-4 py-4 lg:py-10">
           {/* Header */}
           <motion.header
-            className="text-center mb-8 lg:mb-12"
+            className="text-center mb-3 lg:mb-8"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="inline-block mb-6"
+              className="inline-block mb-3 lg:mb-5"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-1 rounded-2xl">
-                <div className="bg-slate-900 px-6 py-3 rounded-2xl">
-                  <div className="flex items-center gap-3">
-                    <Bookmark className="w-5 h-5 text-yellow-400" />
-                    <span className="text-yellow-400 font-medium">
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-0.5 lg:p-1 rounded-2xl">
+                <div className="bg-slate-900 px-3 py-1.5 lg:px-6 lg:py-3 rounded-2xl">
+                  <div className="flex items-center gap-2 lg:gap-3">
+                    <Bookmark className="w-4 h-4 lg:w-5 lg:h-5 text-yellow-400" />
+                    <span className="text-yellow-400 font-medium text-xs lg:text-base">
                       {d.bookmarkText}
                     </span>
-                    <span className="text-white font-bold text-lg">
+                    <span className="text-white font-bold text-sm lg:text-lg">
                       {d.bookmarkDomain}
                     </span>
                   </div>
@@ -61,47 +61,47 @@ export default function PageContent({ locale }: { locale: string }) {
               </div>
             </motion.div>
 
-            <h1 className="text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 mb-12 tracking-tight leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 mb-2 lg:mb-4 tracking-tight leading-tight">
               {d.heroTitle}
             </h1>
           </motion.header>
 
           {/* Contact Section */}
           <motion.div
-            className="max-w-6xl mx-auto mb-20 lg:mb-32"
+            className="max-w-6xl mx-auto mb-4 lg:mb-10"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl rounded-4xl p-8 lg:p-12 border border-slate-400/20 shadow-2xl">
-              <div className="text-center mb-8 lg:mb-12">
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-2 rounded-full text-white font-medium mb-6">
-                  <Star className="w-5 h-5" />
+            <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-xl rounded-3xl lg:rounded-4xl p-3 lg:p-10 border border-slate-400/20 shadow-2xl">
+              <div className="text-center mb-3 lg:mb-8">
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-1 lg:px-6 lg:py-2 rounded-full text-white font-medium mb-2 lg:mb-4 text-xs lg:text-base">
+                  <Star className="w-4 h-4 lg:w-5 lg:h-5" />
                   <span>{d.contactBadge}</span>
                 </div>
-                <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4">
+                <h2 className="text-xl lg:text-4xl font-bold text-white mb-2 lg:mb-4">
                   {d.contactTitle}
                 </h2>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-8 lg:mb-12">
+              <div className="grid grid-cols-2 gap-3 lg:gap-8 mb-4 lg:mb-8">
                 <motion.a
                   href="https://t.me/zfxt5"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative overflow-hidden bg-gradient-to-br from-blue-600/20 to-cyan-600/20 hover:from-blue-600/30 hover:to-cyan-600/30 backdrop-blur-lg rounded-3xl p-6 lg:p-8 border border-blue-400/30 hover:border-blue-400/60 transition-all duration-500"
+                  className="group relative overflow-hidden bg-gradient-to-br from-blue-600/20 to-cyan-600/20 hover:from-blue-600/30 hover:to-cyan-600/30 backdrop-blur-lg rounded-2xl lg:rounded-3xl p-3 lg:p-8 border border-blue-400/30 hover:border-blue-400/60 transition-all duration-500"
                   whileHover={{ scale: 1.02, y: -5 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-cyan-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-4 lg:mb-6">
-                      <MessageCircle className="w-10 lg:w-12 h-10 lg:h-12 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
-                      <ArrowRight className="w-6 lg:w-8 h-6 lg:h-8 text-blue-400 group-hover:translate-x-2 transition-transform duration-300" />
+                    <div className="flex items-center justify-between mb-2 lg:mb-6">
+                      <MessageCircle className="w-6 lg:w-12 h-6 lg:h-12 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
+                      <ArrowRight className="w-4 lg:w-8 h-4 lg:h-8 text-blue-400 group-hover:translate-x-2 transition-transform duration-300" />
                     </div>
-                    <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">{d.tgSupportTitle}</h3>
-                    <p className="text-blue-200 text-lg mb-3 lg:mb-4">{d.tgSupportHandle}</p>
-                    <p className="text-slate-300 text-sm lg:text-base">{d.tgSupportDesc}</p>
+                    <h3 className="text-sm lg:text-2xl font-bold text-white mb-1 lg:mb-2">{d.tgSupportTitle}</h3>
+                    <p className="text-blue-200 text-sm lg:text-lg mb-1 lg:mb-4 break-all">{d.tgSupportHandle}</p>
+                    <p className="text-slate-300 text-sm lg:text-base hidden md:block">{d.tgSupportDesc}</p>
                   </div>
                 </motion.a>
 
@@ -109,25 +109,25 @@ export default function PageContent({ locale }: { locale: string }) {
                   href="https://t.me/thirdpartypaybuild"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative overflow-hidden bg-gradient-to-br from-purple-600/20 to-pink-600/20 hover:from-purple-600/30 hover:to-pink-600/30 backdrop-blur-lg rounded-3xl p-6 lg:p-8 border border-purple-400/30 hover:border-purple-400/60 transition-all duration-500"
+                  className="group relative overflow-hidden bg-gradient-to-br from-purple-600/20 to-pink-600/20 hover:from-purple-600/30 hover:to-pink-600/30 backdrop-blur-lg rounded-2xl lg:rounded-3xl p-3 lg:p-8 border border-purple-400/30 hover:border-purple-400/60 transition-all duration-500"
                   whileHover={{ scale: 1.02, y: -5 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-pink-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-4 lg:mb-6">
-                      <MessageCircle className="w-10 lg:w-12 h-10 lg:h-12 text-purple-400 group-hover:scale-110 transition-transform duration-300" />
-                      <ArrowRight className="w-6 lg:w-8 h-6 lg:h-8 text-purple-400 group-hover:translate-x-2 transition-transform duration-300" />
+                    <div className="flex items-center justify-between mb-2 lg:mb-6">
+                      <MessageCircle className="w-6 lg:w-12 h-6 lg:h-12 text-purple-400 group-hover:scale-110 transition-transform duration-300" />
+                      <ArrowRight className="w-4 lg:w-8 h-4 lg:h-8 text-purple-400 group-hover:translate-x-2 transition-transform duration-300" />
                     </div>
-                    <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">{d.tgChannelTitle}</h3>
-                    <p className="text-purple-200 text-lg mb-3 lg:mb-4">{d.tgChannelHandle}</p>
-                    <p className="text-slate-300 text-sm lg:text-base">{d.tgChannelDesc}</p>
+                    <h3 className="text-sm lg:text-2xl font-bold text-white mb-1 lg:mb-2">{d.tgChannelTitle}</h3>
+                    <p className="text-purple-200 text-sm lg:text-lg mb-1 lg:mb-4 break-all">{d.tgChannelHandle}</p>
+                    <p className="text-slate-300 text-sm lg:text-base hidden md:block">{d.tgChannelDesc}</p>
                   </div>
                 </motion.a>
               </div>
 
               <motion.div
-                className="text-center pb-4 lg:pb-8"
+                className="text-center pb-1 lg:pb-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
@@ -136,18 +136,41 @@ export default function PageContent({ locale }: { locale: string }) {
                   href="https://tatapaytech.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 lg:px-12 py-4 lg:py-6 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 hover:from-blue-700 hover:via-purple-700 hover:to-cyan-700 text-white font-bold text-lg lg:text-xl rounded-3xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl"
+                  className="inline-flex items-center px-5 lg:px-12 py-2.5 lg:py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 hover:from-blue-700 hover:via-purple-700 hover:to-cyan-700 text-white font-bold text-sm lg:text-xl rounded-2xl lg:rounded-3xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl"
                 >
-                  <Globe className="w-6 lg:w-7 h-6 lg:h-7 mr-3 lg:mr-4" />
+                  <Globe className="w-4 lg:w-7 h-4 lg:h-7 mr-2 lg:mr-4" />
                   {d.websiteBtnText}
-                  <ArrowRight className="w-6 lg:w-7 h-6 lg:h-7 ml-3 lg:ml-4" />
+                  <ArrowRight className="w-4 lg:w-7 h-4 lg:h-7 ml-2 lg:ml-4" />
                 </a>
               </motion.div>
             </div>
           </motion.div>
 
+          {/* Products — first screen */}
+          <motion.div
+            className="max-w-6xl mx-auto grid md:grid-cols-2 gap-3 lg:gap-8 mb-10 lg:mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 backdrop-blur-lg rounded-2xl lg:rounded-3xl p-3 lg:p-8 border border-blue-400/30 hover:border-blue-400/60 transition-all duration-300 group">
+              <div className="flex items-center gap-3 mb-2 lg:mb-4">
+                <CreditCard className="w-7 h-7 lg:w-14 lg:h-14 text-blue-400 shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-base lg:text-2xl font-bold text-white">{d.product1Title}</h3>
+              </div>
+              <p className="text-slate-300 text-sm leading-snug lg:text-lg lg:leading-relaxed">{d.product1Desc}</p>
+            </div>
+            <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur-lg rounded-2xl lg:rounded-3xl p-3 lg:p-8 border border-purple-400/30 hover:border-purple-400/60 transition-all duration-300 group">
+              <div className="flex items-center gap-3 mb-2 lg:mb-4">
+                <Coins className="w-7 h-7 lg:w-14 lg:h-14 text-purple-400 shrink-0 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-base lg:text-2xl font-bold text-white">{d.product2Title}</h3>
+              </div>
+              <p className="text-slate-300 text-sm leading-snug lg:text-lg lg:leading-relaxed">{d.product2Desc}</p>
+            </div>
+          </motion.div>
+
           {/* Notice / Service Overview */}
-          <section className="min-h-screen flex flex-col justify-start pt-8 lg:pt-16">
+          <section className="pt-4 lg:pt-8">
             <div className="text-center mb-8 lg:mb-12">
               <motion.div
                 className={`inline-flex items-center gap-2 px-6 py-2 rounded-full text-white font-medium mb-6 ${
@@ -196,25 +219,6 @@ export default function PageContent({ locale }: { locale: string }) {
                 <p className={`text-lg lg:text-xl leading-relaxed ${isWarning ? 'text-red-200' : 'text-blue-200'}`}>
                   {d.noticeP2}
                 </p>
-              </div>
-            </motion.div>
-
-            {/* Products */}
-            <motion.div
-              className="grid md:grid-cols-2 gap-8 mb-16"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.6 }}
-            >
-              <div className="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 backdrop-blur-lg rounded-3xl p-8 border border-blue-400/30 hover:border-blue-400/60 transition-all duration-300 group">
-                <CreditCard className="w-16 h-16 text-blue-400 mb-6 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-2xl font-bold text-white mb-4">{d.product1Title}</h3>
-                <p className="text-slate-300 text-lg leading-relaxed">{d.product1Desc}</p>
-              </div>
-              <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/40 backdrop-blur-lg rounded-3xl p-8 border border-purple-400/30 hover:border-purple-400/60 transition-all duration-300 group">
-                <Coins className="w-16 h-16 text-purple-400 mb-6 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-2xl font-bold text-white mb-4">{d.product2Title}</h3>
-                <p className="text-slate-300 text-lg leading-relaxed">{d.product2Desc}</p>
               </div>
             </motion.div>
 
