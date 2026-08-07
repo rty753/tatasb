@@ -1,7 +1,7 @@
 const zh = {
   // Meta
-  metaTitle: '塔塔支付系统 - tata.sb | 第三方支付通道系统 | 海外跑分系统',
-  metaDesc: '塔塔支付系统官方联系方式更新页面。提供第三方支付通道系统、海外跑分系统解决方案。严禁国内业务，专注海外市场。避免TG账号封禁，确保联系方式长期有效。',
+  metaTitle: '塔塔支付系统 - tata.sb | 海外支付系统搭建出租 | 海外四方系统',
+  metaDesc: '塔塔支付系统官方联系方式更新页面。提供海外支付系统搭建出租（印度、孟加拉、巴基斯坦、缅甸，UPI唤醒系统）与海外四方系统出租。严禁国内业务，专注海外市场。避免TG账号封禁，确保联系方式长期有效。',
   metaSiteName: '塔塔支付系统',
   metaLocale: 'zh_CN',
   jsonLdName: '塔塔支付系统',
@@ -34,10 +34,10 @@ const zh = {
   noticeP2: '塔塔支付系统只为海外市场提供合规的支付解决方案，确保塔塔支付系统的专业性与合规性。',
 
   // Products
-  product1Title: '塔塔支付系统 - 第三方支付通道',
-  product1Desc: '塔塔支付系统提供专业的海外第三方支付解决方案，塔塔支付系统支持多种支付方式和货币结算，确保塔塔支付系统的安全稳定。',
-  product2Title: '塔塔支付系统 - 海外跑分系统',
-  product2Desc: '塔塔支付系统提供专业的海外跑分系统搭建服务，塔塔支付系统确保完整的系统部署配置，让塔塔支付系统稳定运行。',
+  product1Title: '塔塔支付系统 - 海外支付系统搭建出租',
+  product1Desc: '塔塔支付系统提供专业的海外支付系统搭建与出租服务，覆盖印度、孟加拉、巴基斯坦、缅甸，支持UPI唤醒系统、UPI/bKash/JazzCash等本地支付方式与多币种结算，确保塔塔支付系统的安全稳定。',
+  product2Title: '塔塔支付系统 - 海外四方系统出租',
+  product2Desc: '塔塔支付系统提供海外四方系统出租与四方支付系统搭建服务，多上游通道聚合进一套系统，提供支付接口技术支持、快速集成原生支付网关，让四方支付系统稳定运行。',
 
   // Markets (Chinese doesn't show this section)
   showMarkets: false,
@@ -72,12 +72,12 @@ const zh = {
 
 const en: typeof zh = {
   // Meta
-  metaTitle: 'Payment Gateway System for iGaming | White-Label Managed Solution - tata.sb',
-  metaDesc: 'Fully-managed, white-label payment gateway for iGaming operators and PSPs. Pre-integrated UPI, bKash, JazzCash, GCash across India, Pakistan, Bangladesh, Vietnam, Philippines. Your brand, your domain, 24/7 support.',
+  metaTitle: 'Overseas Payment System Build & Rental | Fourth-Party Payment System - tata.sb',
+  metaDesc: 'Overseas payment system build & rental plus fourth-party (aggregation) payment system rental. Pre-integrated UPI intent (wake-up) collection, bKash, JazzCash across India, Bangladesh, Pakistan and Myanmar. 24/7 support.',
   metaSiteName: 'Payment Gateway System',
   metaLocale: 'en_US',
   jsonLdName: 'Payment Gateway System',
-  jsonLdDesc: 'Fully-managed, white-label payment gateway for iGaming operators and payment service providers',
+  jsonLdDesc: 'Overseas payment system build & rental and fourth-party aggregation payment system rental',
 
   // Header
   bookmarkText: 'Permanent Domain — Bookmark Now',
@@ -99,29 +99,29 @@ const en: typeof zh = {
   noticeStyle: 'info' as const,
   noticeBadge: 'Our Service',
   noticeSectionTitle: 'What We Build For You',
-  noticeHeading: 'Fully-Managed Payment Infrastructure for iGaming',
-  noticeP1: 'We build, host, and operate branded payment gateways for iGaming operators and payment service providers across South and Southeast Asia. ',
-  noticeHighlight: 'Your brand. Your domain. Zero server management.',
+  noticeHeading: 'Fully-Managed Overseas Payment Infrastructure',
+  noticeP1: 'We build, host, and operate complete payment systems for operators and payment service providers across India, Bangladesh, Pakistan and Myanmar. ',
+  noticeHighlight: 'Your domain. Zero server management.',
   noticeP1End: '',
-  noticeP2: 'You bring your business and merchant accounts — we deliver a complete payment system running under your brand. Hosting, PCI DSS compliance, 24/7 operations, ongoing development, and local payment integrations — all included.',
+  noticeP2: 'You bring your business and merchant accounts — we deliver a complete payment system ready to run. Hosting, PCI DSS compliance, 24/7 operations, ongoing development, and local payment integrations — all included.',
 
   // Products
-  product1Title: 'White-Label Payment Gateway',
-  product1Desc: 'Launch your own branded payment channel with pre-integrated local methods — UPI, bKash, JazzCash, GCash, MoMo and more. Full merchant management, real-time dashboards, multi-currency settlement, and automated reconciliation.',
-  product2Title: 'Payment Channel Aggregation',
-  product2Desc: 'Unify multiple payment channels into a single intelligent system. Smart routing maximizes success rates while built-in risk management protects every transaction. Serving India, Pakistan, Bangladesh, Vietnam, Philippines, and Myanmar.',
+  product1Title: 'Overseas Payment System — Build & Rental',
+  product1Desc: 'Rent a ready-made payment system or have one built for you, covering India, Bangladesh, Pakistan and Myanmar. Pre-integrated UPI intent (wake-up) collection, bKash, JazzCash and local bank channels, with real-time dashboards, multi-currency settlement, and automated reconciliation.',
+  product2Title: 'Fourth-Party Payment System Rental',
+  product2Desc: 'Rent a fourth-party (aggregation) payment system: unify multiple upstream channels in one platform with smart routing, payment API technical support, and fast native gateway integration. Serving India, Bangladesh, Pakistan and Myanmar.',
 
   // Markets (English shows this section)
   showMarkets: true,
   marketsBadge: 'Coverage',
   marketsTitle: 'Markets & Payment Methods',
-  marketsSubtitle: 'Deep local payment integrations across South & Southeast Asia',
+  marketsSubtitle: 'Deep local payment integrations across our four core markets',
   market1Country: 'India', market1Flag: '🇮🇳', market1Methods: 'UPI · IMPS · Net Banking · Wallets',
-  market2Country: 'Pakistan', market2Flag: '🇵🇰', market2Methods: 'JazzCash · Easypaisa · Bank Transfer',
-  market3Country: 'Bangladesh', market3Flag: '🇧🇩', market3Methods: 'bKash · Nagad · Rocket',
-  market4Country: 'Vietnam', market4Flag: '🇻🇳', market4Methods: 'MoMo · ZaloPay · Bank Transfer',
-  market5Country: 'Philippines', market5Flag: '🇵🇭', market5Methods: 'GCash · Maya · Bank Transfer',
-  market6Country: 'Myanmar', market6Flag: '🇲🇲', market6Methods: 'KBZPay · Wave Money · CB Pay',
+  market2Country: 'Bangladesh', market2Flag: '🇧🇩', market2Methods: 'bKash · Nagad · Rocket',
+  market3Country: 'Pakistan', market3Flag: '🇵🇰', market3Methods: 'JazzCash · Easypaisa · Bank Transfer',
+  market4Country: 'Myanmar', market4Flag: '🇲🇲', market4Methods: 'KBZPay · Wave Money · CB Pay',
+  market5Country: '', market5Flag: '', market5Methods: '',
+  market6Country: '', market6Flag: '', market6Methods: '',
 
   // Certifications
   certBadge: 'Security & Compliance',

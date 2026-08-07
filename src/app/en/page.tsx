@@ -5,9 +5,9 @@ const baseUrl = 'https://tata.sb';
 
 export const metadata: Metadata = {
   title:
-    'Payment Gateway System for iGaming | White-Label Managed Solution - tata.sb',
+    'Overseas Payment System Build & Rental | Fourth-Party Payment System - tata.sb',
   description:
-    'Fully-managed, white-label payment gateway for iGaming operators and PSPs. Pre-integrated UPI, bKash, JazzCash, GCash across India, Pakistan, Bangladesh, Vietnam, Philippines. Your brand, your domain, 24/7 support.',
+    'Overseas payment system build & rental plus fourth-party (aggregation) payment system rental. Pre-integrated UPI intent (wake-up) collection, bKash, JazzCash across India, Bangladesh, Pakistan and Myanmar. 24/7 support.',
   robots: 'index, follow',
   alternates: {
     canonical: `${baseUrl}/en/`,
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Payment Gateway System for iGaming | White-Label Managed Solution',
+    title: 'Overseas Payment System Build & Rental | Fourth-Party Payment System',
     description:
-      'Fully-managed, white-label payment gateway for iGaming operators and PSPs across South & Southeast Asia.',
+      'Payment system build & rental and fourth-party aggregation system rental across India, Bangladesh, Pakistan and Myanmar.',
     url: `${baseUrl}/en/`,
     siteName: 'Payment Gateway System',
     locale: 'en_US',
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Payment Gateway System for iGaming | White-Label Managed Solution',
+    title: 'Overseas Payment System Build & Rental | Fourth-Party Payment System',
     description:
-      'Fully-managed, white-label payment gateway for iGaming operators and PSPs across South & Southeast Asia.',
+      'Payment system build & rental and fourth-party aggregation system rental across India, Bangladesh, Pakistan and Myanmar.',
   },
 };
 
@@ -41,15 +41,8 @@ export default function EnPage() {
     name: 'Payment Gateway System',
     url: baseUrl,
     description:
-      'Fully-managed, white-label payment gateway for iGaming operators and payment service providers',
-    areaServed: [
-      'India',
-      'Pakistan',
-      'Bangladesh',
-      'Vietnam',
-      'Philippines',
-      'Myanmar',
-    ],
+      'Overseas payment system build & rental and fourth-party aggregation payment system rental',
+    areaServed: ['India', 'Bangladesh', 'Pakistan', 'Myanmar'],
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer support',

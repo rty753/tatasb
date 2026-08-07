@@ -242,7 +242,7 @@ export default function PageContent({ locale }: { locale: string }) {
                     { country: d.market4Country, flag: d.market4Flag, methods: d.market4Methods },
                     { country: d.market5Country, flag: d.market5Flag, methods: d.market5Methods },
                     { country: d.market6Country, flag: d.market6Flag, methods: d.market6Methods },
-                  ].map((m) => (
+                  ].filter((m) => m.country).map((m) => (
                     <motion.div
                       key={m.country}
                       className="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 backdrop-blur-lg rounded-2xl p-6 border border-emerald-400/30 hover:border-emerald-400/60 transition-all duration-300 group text-center"

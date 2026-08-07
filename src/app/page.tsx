@@ -4,9 +4,9 @@ import PageContent from './components/PageContent';
 const baseUrl = 'https://tata.sb';
 
 export const metadata: Metadata = {
-  title: '塔塔支付系统 - tata.sb | 第三方支付通道系统 | 海外跑分系统',
+  title: '塔塔支付系统 - tata.sb | 海外支付系统搭建出租 | 海外四方系统',
   description:
-    '塔塔支付系统官方联系方式更新页面。提供第三方支付通道系统、海外跑分系统解决方案。严禁国内业务，专注海外市场。避免TG账号封禁，确保联系方式长期有效。',
+    '塔塔支付系统官方联系方式更新页面。提供海外支付系统搭建出租（印度、孟加拉、巴基斯坦、缅甸，UPI唤醒系统）与海外四方系统出租。严禁国内业务，专注海外市场。避免TG账号封禁，确保联系方式长期有效。',
   robots: 'index, follow',
   authors: [{ name: '塔塔支付科技' }],
   creator: '塔塔支付科技',
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: '塔塔支付系统 - tata.sb | 第三方支付通道系统',
+    title: '塔塔支付系统 - tata.sb | 海外支付系统搭建出租',
     description:
-      '塔塔支付系统官方联系方式更新页面。提供第三方支付通道系统、海外跑分系统解决方案。严禁国内业务，专注海外市场。',
+      '塔塔支付系统官方联系方式更新页面。提供海外支付系统搭建出租与海外四方系统出租。严禁国内业务，专注海外市场。',
     url: `${baseUrl}/`,
     siteName: '塔塔支付系统',
     locale: 'zh_CN',
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '塔塔支付系统 - tata.sb | 第三方支付通道系统',
+    title: '塔塔支付系统 - tata.sb | 海外支付系统搭建出租',
     description:
-      '塔塔支付系统官方联系方式更新页面。提供第三方支付通道系统、海外跑分系统解决方案。',
+      '塔塔支付系统官方联系方式更新页面。提供海外支付系统搭建出租与海外四方系统出租。',
   },
 };
 
