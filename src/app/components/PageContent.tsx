@@ -322,17 +322,6 @@ export default function PageContent({ locale }: { locale: string }) {
           >
             <div className="max-w-4xl mx-auto">
               <div className="bg-gradient-to-r from-slate-800/40 to-slate-900/40 backdrop-blur-lg rounded-2xl p-8 border border-slate-600/20">
-                <div className="mb-4">
-                  <a
-                    href="https://bbs.tata.sb/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-300"
-                  >
-                    <Globe className="w-4 h-4" />
-                    <span>{d.forumText}</span>
-                  </a>
-                </div>
                 <p className="text-sm text-slate-500">{d.copyright}</p>
               </div>
             </div>

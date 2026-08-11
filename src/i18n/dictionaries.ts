@@ -63,7 +63,6 @@ const zh = {
   cert6Title: '7×24安全监控', cert6Desc: '专业安全运维保障服务',
 
   // Footer
-  forumText: '全球支付论坛',
   copyright: '© 2026 塔塔支付系统 - 塔塔支付科技 - 专业塔塔支付系统解决方案提供商',
 
   // Lang switch
@@ -135,7 +134,6 @@ const en: typeof zh = {
   cert6Title: '24/7 Security Monitoring', cert6Desc: 'Round-the-clock security operations center',
 
   // Footer
-  forumText: 'Global Payment Forum',
   copyright: '© 2026 Payment Gateway System — Professional Payment Solutions Provider',
 
   // Lang switch
