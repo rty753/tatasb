@@ -1,53 +1,76 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Palette: black base, white type, one blue accent. No other hues. */
+@theme {
+  --color-ink-950: #04070d;
+  --color-ink-900: #070b13;
+  --color-ink-800: #0b111c;
+  --color-ink-700: #111a29;
+
+  --color-brand-100: #dce8ff;
+  --color-brand-200: #b7d0ff;
+  --color-brand-300: #8fb6ff;
+  --color-brand-400: #5a94ff;
+  --color-brand-500: #2b6fff;
+  --color-brand-600: #1557f0;
+  --color-brand-700: #0e42c4;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans), var(--font-noto-sc), "PingFang SC",
+    "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), var(--font-noto-sc), ui-monospace,
+    "SFMono-Regular", Menlo, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--color-ink-950);
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ink-950);
+  color: #ffffff;
+  font-family: var(--font-geist-sans), var(--font-noto-sc), "PingFang SC",
+    "Microsoft YaHei", system-ui, sans-serif;
+  font-feature-settings: "tnum" 1;
 }
 
-/* 3D Grid Background Animations */
-@keyframes scan {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100vh);
-  }
+::selection {
+  background: var(--color-brand-500);
+  color: #ffffff;
 }
 
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.6;
-  }
+/* Hairline grid behind the page; GridBackground draws pulses on the same 56px lattice. */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(143, 182, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(143, 182, 255, 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
 }
 
-.animate-scan {
-  animation: scan 8s linear infinite;
+.mask-grid-fade {
+  -webkit-mask-image: radial-gradient(ellipse 95% 75% at 50% 0%, #000 35%, transparent 90%);
+  mask-image: radial-gradient(ellipse 95% 75% at 50% 0%, #000 35%, transparent 90%);
 }
 
-.animate-pulse-slow {
-  animation: pulse-slow 4s ease-in-out infinite;
+/* Film grain over the backdrop so large dark areas don't band. */
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+/* Horizon: the lit rim of a very large circle rising behind the contact panel. */
+.horizon {
+  -webkit-mask-image: radial-gradient(ellipse 50% 100% at 50% 0%, #000 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse 50% 100% at 50% 0%, #000 35%, transparent 100%);
+}
+
+.horizon-rim {
+  border-top: 1px solid rgba(183, 208, 255, 0.75);
+  background: radial-gradient(ellipse 50% 14% at 50% 0%, rgba(43, 111, 255, 0.32), transparent 100%),
+    var(--color-ink-950);
+  box-shadow:
+    0 -1px 24px 0 rgba(90, 148, 255, 0.55),
+    0 -30px 110px -10px rgba(43, 111, 255, 0.5);
 }

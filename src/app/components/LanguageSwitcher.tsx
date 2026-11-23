@@ -19,10 +19,10 @@ export default function LanguageSwitcher({ locale }: { locale: string }) {
   return (
     <button
       onClick={handleSwitch}
-      className="fixed top-4 right-4 md:top-6 md:right-6 z-50 flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 text-white text-sm font-medium hover:bg-white/20 transition-all duration-300 cursor-pointer select-none"
+      className="flex cursor-pointer select-none items-center gap-1.5 rounded-sm border border-white/15 bg-white/[0.04] px-2.5 py-1.5 font-mono text-xs font-medium text-white transition-colors duration-200 hover:border-brand-400/70 hover:bg-brand-500/15 lg:px-3"
       aria-label={`Switch to ${isZh ? 'English' : 'Chinese'}`}
     >
-      <Globe className="w-4 h-4" />
+      <Globe className="h-3.5 w-3.5 text-brand-300" />
       {label}
     </button>
   );

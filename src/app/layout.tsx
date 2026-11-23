@@ -1,5 +1,5 @@
 import { headers } from 'next/headers';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Noto_Sans_SC } from 'next/font/google';
 import './globals.css';
 
 const geistSans = Geist({
@@ -12,11 +12,20 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+// Geist has no CJK glyphs; without this, Chinese falls back to whatever the OS ships
+// (Microsoft YaHei on Windows). Self-hosted by next/font and loaded per unicode-range slice.
+const notoSansSC = Noto_Sans_SC({
+  variable: '--font-noto-sc',
+  weight: 'variable',
+  display: 'swap',
+  preload: false,
+});
+
 export function generateViewport() {
   return {
     width: 'device-width',
     initialScale: 1,
-    themeColor: '#0f172a',
+    themeColor: '#04070d',
   };
 }
 
@@ -32,7 +41,7 @@ export default async function RootLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${notoSansSC.variable} antialiased`}
       >
         {children}
       </body>
